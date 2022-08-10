@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<main>
+	<!-- Services -->
+	<section class="container my-4">
+		<div class="row">
+			
+			<div class="col-md-4 mb-4 mx-auto">
+				<div class="card">
+				  <img src="{{services.img.url}}" class="card-img-top" alt="image" style="height:300px">
+				</div>
+			</div>  
+		</div>
+        <div class="card-body">
+            <h5 class="">{{services.title}}</h5>
+            <p class="">{{services.detail}}</p>
+            <a href="/services" class="btn btn-primary">Back To Services</a>
+          </div>
+	</section>
+	<!-- End -->
+	
+	
+</main>
+{% endblock %}

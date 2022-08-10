@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- Main Start -->
+    <main>
+    	<!-- banner Start -->
+    	<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+		  <div class="carousel-inner">
+		  	{% for banner in banners %}
+		    <div class="carousel-item {% if forloop.counter == 1 %} active {% endif %}">
+		      <img src="{{banner.img.url}}" style="max-height: 600px;" class="d-block w-100" alt="Slide 1"></a>
+		    </div>
+		    {% endfor %}
+		  </div>
+		  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+		    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		    <span class="visually-hidden">Previous</span>
+		  </button>
+		  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+		    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		    <span class="visually-hidden">Next</span>
+		  </button>
+		</div>
+		<!-- End Banner -->
+		<!-- Services -->
+		<section class="container my-4">
+			<h1 class="text-center mb-4 section-heading">Services</h1>
+			<div class="row">
+				{% for service in services %}
+				<div class="col-6 col-sm-4 col-md-4">
+					<div class="card"> 
+					  <img src="{{service.img.url}}" class="rounded"  alt="..." height="300px" >
+					  <div class="card-body">
+					    <h3 class="card-title">{{service.title}}</h3>
+					    <p class="card-text">{{service.detail|truncatechars:170}}</p>
+						<a href="{% url 'servicedetail' service.id %}" class="btn btn-primary">Read more</a>
+					  </div>
+					</div>
+				</div>
+				
+				{% endfor %}
+			</div>
+			<div class="d-flex justify-content-center mt-3">
+			<a href="/services" class="btn btn-primary mx-3">All Services</a>
+		</div>
+		
+		</section>
+		<!-- End -->
+
+		<!-- Testimonials -->
+		<section class="container-fluid bg-light py-4 mt-5 border-top border-bottom">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5">
+							<h1 class="mb-4 section-heading">About Us</h1>
+							<p class="lh-base">OneStopFitness Solution has Been The Authority In Fitness Since 1965 Dating Back To The Original OneStopFitness In Venice, California. It Was The Place For Serious Fitness. Opened Long Before The Modern-Day Health Club Existed, The Original OneStopFitness Featured Homemade Equipment And A Dedication To Getting Results. It Was An Instant Hit. OneStopFitness Quickly Became Known As “The Mecca Of Bodybuilding.''
+
+								In 1977, OneStopFitness Received International Attention When It Was Featured In The Movie Pumping Iron That Starred Arnold Schwarzenegger And Lou Ferrigno. From That First Gym In Venice, OneStopFitness Has Become The Largest Co-Ed Gym Chain In The World With Over 700+ Clubs In 27 Countries. Today, OneStopFitness Has Expanded Its Fitness Profile To Offer All Of The Latest Equipment And Services, Including Group Exercise, Personal Training, Cardiovascular Equipment, Spinning, And Yoga, While Maintaining Its Core Weight Lifting Tradition.
+								
+								OneStopFitness Has Become The Preferred Gym Of Celebrities, Athletes, Bodybuilders, The Military, And Fitness Enthusiasts All Over The World. Most Importantly, OneStopFitness Continues To Change Lives By Helping People Achieve Their Individual Potential.</p>
+							<!--	<p><a href="{% url 'pagedetail' 1 %}" class="btn btn-info text-white">Read More</a></p> -->
+					</div>
+					<div class="col-md-6 offset-1">
+							<h1 class="mb-4 section-heading">Gallery <a href="/gallery" class="float-end btn btn-info text-white mt-2">View All</a></h1>
+							<div class="gallery">
+								{% for gimg in gimgs %}
+								<a href="{{gimg.img.url}}" data-lightbox="gallery"><img src="{{gimg.img.url}}" width="155"  class="img-thumbnail" alt="{{gimg.alt_text}}"></a>
+								{% endfor %}
+							</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Testimonials -->
+
+    </main>
+    <!-- End -->
+
+<!-- LightBox css -->
+<link rel="stylesheet" type="text/css" href="{% static 'lightbox2-2.11.3/dist/css/lightbox.min.css' %}" />
+<!-- LightBox Js -->
+<script type="text/javascript" src="{% static 'lightbox2-2.11.3/dist/js/lightbox.min.js' %}"></script>
+
+{% endblock %}
