@@ -1,0 +1,7 @@
+# Onestopfitness
+Modern gym management solution for Gym Owners
+A gym management system developed for an academic project using Python Django, Bootstrap, and SQLite is a web-based application designed to make it easy for modern gym owners to manage their gym operations. The system is built using the Django web framework, which is known for its ease of use and scalability. Bootstrap, a popular front-end framework, is used to create a responsive and visually appealing user interface that is easy to navigate. SQLite, a lightweight and simple relational database, is used to store and retrieve data related to gym memberships, equipment, and other gym-related information.
+
+The system includes user login, admin login, trainer login and live notification system. The user login allows members to view their membership information, book equipment, and access their workout schedules. The admin login gives gym owners access to advanced features such as adding or deleting members, scheduling trainers, and managing equipment inventory. The trainer login allows trainers to view their schedules, track client progress and manage the client's workout plans.
+
+Additionally, the system also has integrated a Stripe payment gateway, which allows gym owners to easily process online payments for memberships and other gym-related services. With this system, gym owners can manage their gym more efficiently and effectively, providing a better experience for their members.
